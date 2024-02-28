@@ -7,11 +7,11 @@ interface AppBarAndDrawerProps {
 }
 export default function Layout({ children }: AppBarAndDrawerProps) {
   return (
-    <Box sx={{ margin: 0, backgroundColor: "black" }}>
+    <Container>
       <Box sx={{ width: "100%" }}>
-        <EdenIcon></EdenIcon>
+        <EdenIcon size={32} />
       </Box>
       {children}
-    </Box>
+    </Container>
   );
 }
