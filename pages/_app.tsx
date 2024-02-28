@@ -3,11 +3,9 @@ import Layout from "@/components/layout";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../lib/createEmotionCache";
 import Head from "next/head";
-import type { Session } from "next-auth";
 
 const clientSideEmotionCache = createEmotionCache();
 export interface ILocalProps extends AppProps {
-  session: Session;
   emotionCache?: EmotionCache;
 }
 
