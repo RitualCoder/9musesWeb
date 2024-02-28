@@ -1,17 +1,16 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { ReactNode } from "react";
-import EdenIcon from "./icons/edenIcon";
+import NavBar from "./header";
 
 interface AppBarAndDrawerProps {
   children: ReactNode;
 }
 export default function Layout({ children }: AppBarAndDrawerProps) {
   return (
-    <Container>
-      <Box sx={{ width: "100%" }}>
-        <EdenIcon size={32} />
-      </Box>
+    <Box>
+      <NavBar />
+
       {children}
-    </Container>
+    </Box>
   );
 }
