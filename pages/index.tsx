@@ -41,10 +41,10 @@ export default function HomePage() {
             }}
           >
             <Box m={3}>
-              <Typography variant="h3" color={"white"}>
+              <Typography variant="h3" color={"white"} fontFamily={"Avander"}>
                 DECOUVREZ
               </Typography>
-              <Typography variant="h3" color={"white"}>
+              <Typography variant="h3" color={"white"} fontFamily={"Avander"}>
                 NOS AVENTURES
               </Typography>
             </Box>

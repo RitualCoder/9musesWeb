@@ -1,5 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 
+//@ts-ignore
+import Avander from "../fonts/Avander.ttf";
+//@ts-ignore
+import CenturyGothic from "../fonts/CenturyGothic.ttf";
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -12,6 +17,7 @@ const theme = createTheme({
   typography: {
     allVariants: {
       color: "#FFFFFF",
+      fontFamily: ["CenturyGothic", "Avander", "sans-serif"].join(","),
     },
   },
   components: {
