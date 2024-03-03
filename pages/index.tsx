@@ -11,11 +11,7 @@ export default function HomePage() {
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   const handleScrollToBottom = () => {
-    bottomRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start", // Place le bord supérieur de l'élément en haut de la fenêtre de défilement
-      inline: "nearest", // Place l'élément aussi près que possible du bord spécifié
-    });
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -41,10 +37,10 @@ export default function HomePage() {
             }}
           >
             <Box m={3}>
-              <Typography variant="h3" color={"white"}>
+              <Typography variant="h3" color={"white"} fontFamily={"Avander"}>
                 DECOUVREZ
               </Typography>
-              <Typography variant="h3" color={"white"}>
+              <Typography variant="h3" color={"white"} fontFamily={"Avander"}>
                 NOS AVENTURES
               </Typography>
             </Box>
@@ -61,7 +57,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <Box sx={{ textAlign: "center", pt: 13, maxWidth: "md", alignItems: "center", px: 10 }} ref={bottomRef}>
+        <Box sx={{ textAlign: "center", pt: 15, maxWidth: "md", alignItems: "center", px: 10 }} ref={bottomRef}>
           <Typography color={"white"} variant="h5" fontSize={38} mb={2}>
             EDEN C&apos;EST QUOI ?
           </Typography>
@@ -78,7 +74,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <Box sx={{ display: "flex", maxWidth: "md", px: 10, mt: 15, alignItems: "center", gap: 10 }}>
+        <Box sx={{ display: "flex", maxWidth: "md", px: 10, mt: 20, alignItems: "center", gap: 10 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <Typography color={"white"} variant="h5">
               EDEN NE FAITE PLUS QU&apos;UN AVEC VOTRE MOITIÉ

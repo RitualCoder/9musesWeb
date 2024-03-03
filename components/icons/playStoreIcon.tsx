@@ -44,12 +44,12 @@ const Icon = createSvgIcon(
         y2="25.3804"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00A0FF" />
-        <stop offset="0.01" stop-color="#00A1FF" />
-        <stop offset="0.26" stop-color="#00BEFF" />
-        <stop offset="0.51" stop-color="#00D2FF" />
-        <stop offset="0.76" stop-color="#00DFFF" />
-        <stop offset="1" stop-color="#00E3FF" />
+        <stop stopColor="#00A0FF" />
+        <stop offset="0.01" stopColor="#00A1FF" />
+        <stop offset="0.26" stopColor="#00BEFF" />
+        <stop offset="0.51" stopColor="#00D2FF" />
+        <stop offset="0.76" stopColor="#00DFFF" />
+        <stop offset="1" stopColor="#00E3FF" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_0_1"
@@ -59,10 +59,10 @@ const Icon = createSvgIcon(
         y2="18"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FFE000" />
-        <stop offset="0.41" stop-color="#FFBD00" />
-        <stop offset="0.78" stop-color="#FFA500" />
-        <stop offset="1" stop-color="#FF9C00" />
+        <stop stopColor="#FFE000" />
+        <stop offset="0.41" stopColor="#FFBD00" />
+        <stop offset="0.78" stopColor="#FFA500" />
+        <stop offset="1" stopColor="#FF9C00" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_0_1"
@@ -72,8 +72,8 @@ const Icon = createSvgIcon(
         y2="51.7753"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF3A44" />
-        <stop offset="1" stop-color="#C31162" />
+        <stop stopColor="#FF3A44" />
+        <stop offset="1" stopColor="#C31162" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_0_1"
@@ -83,11 +83,11 @@ const Icon = createSvgIcon(
         y2="4.94019"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#32A071" />
-        <stop offset="0.07" stop-color="#2DA771" />
-        <stop offset="0.48" stop-color="#15CF74" />
-        <stop offset="0.8" stop-color="#06E775" />
-        <stop offset="1" stop-color="#00F076" />
+        <stop stopColor="#32A071" />
+        <stop offset="0.07" stopColor="#2DA771" />
+        <stop offset="0.48" stopColor="#15CF74" />
+        <stop offset="0.8" stopColor="#06E775" />
+        <stop offset="1" stopColor="#00F076" />
       </linearGradient>
     </defs>
   </svg>,
