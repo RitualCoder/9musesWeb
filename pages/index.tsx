@@ -4,6 +4,8 @@ import { useRef } from "react";
 import React from "react";
 import { ButtonComponent } from "@/components/button";
 import StoreButton from "@/components/storeButton";
+import { data } from "lib/dataFAQ";
+import FAQ from "@/components/faq";
 
 export default function HomePage() {
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -74,6 +76,7 @@ export default function HomePage() {
           <ButtonComponent url={"/"} text={"NOTRE CONCEPT"} sx={{ mt: 5 }} />
         </Box>
       </section>
+
       <section>
         <Box sx={{ display: "flex", maxWidth: "md", px: 10, mt: 15, alignItems: "center", gap: 10 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -95,84 +98,89 @@ export default function HomePage() {
           <Box component={"img"} src="images/iPhonePicture.png" sx={{ height: "60vh" }} />
         </Box>
       </section>
+
       <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <Box sx={{ display: "flex", maxWidth: "md", mt: 15, alignItems: "center", gap: 20, mb: 3 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "215px",
+              }}
+            >
+              <Box
+                component={"img"}
+                src="images/Asset1.jpeg"
+                sx={{ height: "100%", width: "100px", objectFit: "cover" }}
+              />
+              <Typography>DES AVENTURES PERSONNALISÉES</Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "215px",
+              }}
+            >
+              <Box component={"img"} src="images/Asset2.png" sx={{ height: "100px" }} />
+              <Typography>FAIRE QUELQUE CHOSE POUR L&apos;AUTRE</Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "215px",
+              }}
+            >
+              <Box component={"img"} src="images/Asset3.png" sx={{ height: "100px" }} />
+              <Typography>RAVIVER OU ATTISER LE DÉSIR</Typography>
+            </Box>
+          </Box>
+          <ButtonComponent url={"/"} text={"DÉCOUVREZ NOS OFFRES"} sx={{ mt: 5 }} />
+        </Box>
+      </section>
+
+      <section>
+        <Box sx={{ width: "100%", textAlign: "center", mt: 15, maxWidth: "md" }}>
+          <Typography color={"white"} variant="h2" fontSize={40} fontWeight={500}>
+            FAQ
+          </Typography>
+          <FAQ data={data} />
         </Box>
       </section>
       <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
-        </Box>
-      </section>
-      <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 8 }}>
-          <Typography color={"white"}>TEST</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            textAlign: "center",
+            mt: 15,
+            mb: 10,
+            maxWidth: "md",
+            gap: 2,
+          }}
+        >
+          <Typography variant="h2" fontSize={40} color={"white"}>
+            COMMENCER VOS AVENTURES DÈS MAINTENANT !
+          </Typography>
+          <Typography color={"white"} fontSize={16} mb={3}>
+            Télécharger l&apos;application Eden
+          </Typography>
+          <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
+            <StoreButton platform="ios" url="https://www.apple.com/fr/app-store/" />
+            <StoreButton platform="android" url="https://www.apple.com/fr/app-store/" />
+          </Box>
         </Box>
       </section>
     </Box>

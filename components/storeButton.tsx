@@ -46,6 +46,7 @@ const StoreButton = ({ platform, url }: StoreButtonProps) => {
           "&:hover": {
             backgroundColor: "rgba(255, 255, 255, 0.1)",
           },
+          minWidth: "210px",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
