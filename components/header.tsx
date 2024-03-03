@@ -45,10 +45,10 @@ export default function NavBar() {
         }}
       >
         <Link href="/contact">
-          <Button sx={{ fontSize: 13 }}>NOTRE CONCEPT</Button>
+          <Button sx={{ fontSize: 16 }}>NOTRE CONCEPT</Button>
         </Link>
         <Link href="/">
-          <Button sx={{ fontSize: 13 }}>NOS AVENTURES</Button>
+          <Button sx={{ fontSize: 16 }}>NOS AVENTURES</Button>
         </Link>
       </Box>
 
