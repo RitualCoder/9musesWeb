@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import EdenIcon from "./icons/edenIcon";
 import Link from "next/link";
 import React from "react";
+import { ButtonComponent } from "./button";
 
 export default function NavBar() {
   const [displayBackgroundColor, setDisplayBackgroundColor] = React.useState(false);
@@ -10,7 +11,6 @@ export default function NavBar() {
     setDisplayBackgroundColor(window.scrollY > 100);
   };
 
-  // Attachez le gestionnaire d'événements au chargement du composant
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -32,7 +32,7 @@ export default function NavBar() {
         zIndex: 100,
         transition: "background-color 0.3s ease",
       }}
-      onScroll={((e) => handleScroll(e))}
+      onScroll={(e) => handleScroll(e)}
     >
       {/* Contenu à gauche */}
       <Box
@@ -45,10 +45,10 @@ export default function NavBar() {
         }}
       >
         <Link href="/contact">
-          <Button sx={{ color: "white", fontSize: 13 }}>NOTRE CONCEPT</Button>
+          <Button sx={{ fontSize: 13 }}>NOTRE CONCEPT</Button>
         </Link>
         <Link href="/">
-          <Button sx={{ color: "white", fontSize: 13 }}>NOS AVENTURES</Button>
+          <Button sx={{ fontSize: 13 }}>NOS AVENTURES</Button>
         </Link>
       </Box>
 
@@ -75,9 +75,7 @@ export default function NavBar() {
           alignItems: "center",
         }}
       >
-        <Button variant="contained" sx={{ borderRadius: "0px", bgcolor: "#C0A179", height: "40px" }}>
-          Télécharger l&apos;app
-        </Button>
+        <ButtonComponent url="/" text="Télécharger l'app" />
       </Box>
     </Box>
   );
