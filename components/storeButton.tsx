@@ -4,17 +4,27 @@ import PlayStoreIcon from "./icons/playStoreIcon";
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 
+const appleUrl: string = "https://apps.apple.com/fr/";
+const androidUrl: string = "https://play.google.com/store";
+
 interface StoreButtonProps {
   platform: "ios" | "android";
-  url: string;
 }
 
-const StoreButton = ({ platform, url }: StoreButtonProps) => {
+const StoreButton = ({ platform }: StoreButtonProps) => {
   const getStoreIcon = () => {
     if (platform === "ios") {
       return <AppleIcon size={30} />;
     } else if (platform === "android") {
       return <PlayStoreIcon size={30} />;
+    }
+  };
+
+  const getStoreUrl = () => {
+    if (platform === "ios") {
+      return appleUrl;
+    } else if (platform === "android") {
+      return androidUrl;
     }
   };
 
@@ -34,8 +44,10 @@ const StoreButton = ({ platform, url }: StoreButtonProps) => {
     }
   };
 
+  const storeUrl = getStoreUrl();
+
   return (
-    <Link href={url} target="_blank">
+    <Link href={storeUrl || ""} target="_blank">
       <Button
         variant="contained"
         sx={{

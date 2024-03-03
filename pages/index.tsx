@@ -91,8 +91,8 @@ export default function HomePage() {
             </Typography>
 
             <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
-              <StoreButton platform="ios" url="https://www.apple.com/fr/app-store/" />
-              <StoreButton platform="android" url="https://www.apple.com/fr/app-store/" />
+              <StoreButton platform="ios" />
+              <StoreButton platform="android" />
             </Box>
           </Box>
           <Box component={"img"} src="images/iPhonePicture.png" sx={{ height: "60vh" }} />
@@ -178,8 +178,8 @@ export default function HomePage() {
             Télécharger l&apos;application Eden
           </Typography>
           <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
-            <StoreButton platform="ios" url="https://www.apple.com/fr/app-store/" />
-            <StoreButton platform="android" url="https://www.apple.com/fr/app-store/" />
+            <StoreButton platform="ios" />
+            <StoreButton platform="android" />
           </Box>
         </Box>
       </section>
