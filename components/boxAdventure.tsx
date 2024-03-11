@@ -17,8 +17,8 @@ const Container2 = styled(Box)({
   border: "2px solid #C0A179",
   width: 338,
   height: 382,
-  zIndex: 10,
-  position: "fixed",
+  zIndex: 80,
+  position: "absolute",
   display: "flex",
   flexDirection: "column",
   marginTop: "20px",
@@ -30,26 +30,26 @@ const Container3 = styled(Box)({
   backgroundColor: "black",
   height: "46px",
   width: "270px",
-  position: "relative",
+  position: "absolute",
   flexDirection: "column",
   marginTop: "105%",
-  zIndex: 10,
+  zIndex: 90,
   alignItems: "center",
 });
 
 const Image = styled("img")({
   width: 368,
   height: 263,
-  zIndex: -10, // Modifier le z-index ici
+  zIndex: 0, // Modifier le z-index ici
   position: "relative",
-  marginTop: "-15px",
 });
 
 const Title = styled(Typography)({
   fontSize: "24px",
   textAlign: "center",
   marginBottom: "10px",
-  marginTop: "25px",
+  marginTop: "82%",
+
   color: "white",
 });
 
@@ -65,7 +65,7 @@ const StyledButton = styled(Button)({
   textAlign: "center",
   position: "fixed",
   color: "white",
-  zIndex: 15,
+  zIndex: 99,
   marginTop: "26.5%",
   backgroundColor: "#C0A179",
   borderRadius: "0px",
@@ -78,13 +78,13 @@ const StyledButton = styled(Button)({
 function BoxAdventure() {
   return (
     <Container>
+      <Image src="photo1.jpeg" alt="" />
       <Container2>
-        <Image src="photo1.jpeg" alt="" />
+        <Container3></Container3>
         <Title variant="h1">BOX DÉCOUVERTE</Title>
         <Subtitle variant="h3">une aventure en duo</Subtitle>
       </Container2>
       <StyledButton variant="contained">DÉCOUVRIR LA BOX</StyledButton>
-      <Container3></Container3>
     </Container>
   );
 }
