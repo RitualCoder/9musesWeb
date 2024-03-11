@@ -6,6 +6,7 @@ const Container = styled(Box)({
   backgroundColor: "black",
   width: 368,
   height: 421,
+  zIndex: -10,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -16,15 +17,29 @@ const Container2 = styled(Box)({
   border: "2px solid #C0A179",
   width: 338,
   height: 472,
+  zIndex: 3,
   display: "flex",
   flexDirection: "column",
   marginTop: "20px",
   alignItems: "center",
 });
 
+const Container3 = styled(Box)({
+  display: "flex",
+  backgroundColor: "black",
+  height: "46px",
+  width: "270px",
+  position: "relative",
+  flexDirection: "column",
+  marginTop: "-23px",
+  zIndex: 4,
+  alignItems: "center",
+});
+
 const Image = styled("img")({
   width: 368,
   height: 263,
+  zIndex: 1,
   marginTop: "-15px",
 });
 
@@ -32,7 +47,7 @@ const Title = styled(Typography)({
   fontSize: "24px",
   textAlign: "center",
   marginBottom: "10px",
-  marginTop: "17px",
+  marginTop: "25px",
   color: "white",
 });
 
@@ -46,8 +61,10 @@ const StyledButton = styled(Button)({
   width: "181px",
   height: "46px",
   textAlign: "center",
+  position: "fixed",
   color: "white",
-  marginTop: "-23px",
+  zIndex: 5,
+  marginTop: "26.5%",
   backgroundColor: "#C0A179",
   borderRadius: "0px",
   "&:hover": {
@@ -64,8 +81,8 @@ function BoxAdventure() {
         <Title variant="h1">BOX DÉCOUVERTE</Title>
         <Subtitle variant="h3">une aventure en duo</Subtitle>
       </Container2>
-
       <StyledButton variant="contained">DÉCOUVRIR LA BOX</StyledButton>
+      <Container3></Container3>
     </Container>
   );
 }
