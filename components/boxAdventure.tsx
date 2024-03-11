@@ -17,7 +17,8 @@ const Container2 = styled(Box)({
   border: "2px solid #C0A179",
   width: 338,
   height: 382,
-  zIndex: 3,
+  zIndex: 10,
+  position: "fixed",
   display: "flex",
   flexDirection: "column",
   marginTop: "20px",
@@ -31,15 +32,16 @@ const Container3 = styled(Box)({
   width: "270px",
   position: "relative",
   flexDirection: "column",
-  marginTop: "-23px",
-  zIndex: 4,
+  marginTop: "105%",
+  zIndex: 10,
   alignItems: "center",
 });
 
 const Image = styled("img")({
   width: 368,
   height: 263,
-  zIndex: 1,
+  zIndex: -10, // Modifier le z-index ici
+  position: "relative",
   marginTop: "-15px",
 });
 
@@ -63,7 +65,7 @@ const StyledButton = styled(Button)({
   textAlign: "center",
   position: "fixed",
   color: "white",
-  zIndex: 5,
+  zIndex: 15,
   marginTop: "26.5%",
   backgroundColor: "#C0A179",
   borderRadius: "0px",
@@ -77,7 +79,7 @@ function BoxAdventure() {
   return (
     <Container>
       <Container2>
-        <Image src="/components/photo1.jpeg" alt="" />
+        <Image src="photo1.jpeg" alt="" />
         <Title variant="h1">BOX DÉCOUVERTE</Title>
         <Subtitle variant="h3">une aventure en duo</Subtitle>
       </Container2>
