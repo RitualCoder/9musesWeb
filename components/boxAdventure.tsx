@@ -48,7 +48,7 @@ const Title = styled(Typography)({
   fontSize: "24px",
   textAlign: "center",
   marginBottom: "10px",
-  marginTop: "82%",
+  marginTop: "80%",
 
   color: "white",
 });
@@ -63,10 +63,10 @@ const StyledButton = styled(Button)({
   width: "181px",
   height: "46px",
   textAlign: "center",
-  position: "fixed",
+  position: "relative",
   color: "white",
   zIndex: 99,
-  marginTop: "26.5%",
+  marginTop: "35%",
   backgroundColor: "#C0A179",
   borderRadius: "0px",
   "&:hover": {
