@@ -16,7 +16,7 @@ const Container = styled(Box)({
 const Container2 = styled(Box)({
   border: "2px solid #C0A179",
   width: 338,
-  height: 472,
+  height: 382,
   zIndex: 3,
   display: "flex",
   flexDirection: "column",
