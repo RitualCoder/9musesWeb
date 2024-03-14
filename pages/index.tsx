@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRef } from "react";
 import React from "react";
@@ -7,59 +7,80 @@ import StoreButton from "@/components/storeButton";
 import { data } from "lib/dataFAQ";
 import FAQ from "@/components/faq";
 import CustomCard from "@/components/customCard";
+import theme from "@/lib/themes/themeMui";
 
 export default function HomePage() {
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleScrollToBottom = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minWidth: "380px",
+        overflow: "hidden",
+      }}
+    >
       <section>
-        <Box sx={{ position: "relative", height: "80vh", overflow: "hidden" }}>
+        <Box sx={{ position: "relative", height: "80vh", overflow: "hidden", width: "100%" }}>
           <Box
             component={"img"}
             src="images/Accueil.jpeg"
             alt="Image acceuil"
             sx={{
-              width: "100%",
-              transform: "translateY(-15%)",
-              minWidth: "800px",
+              width: { xs: "180%", md: "100%" },
+              overflow: { xs: "hidden", md: "visible" },
+              transform: { md: "translateY(-15%)", xs: "translateX(-20%)" },
+              justifyContent: "center",
             }}
           />
           <Box
             sx={{
               position: "absolute",
-              right: 30,
-              bottom: 50,
+              right: { md: 30, xs: 20 },
+              bottom: { xs: 70, md: 50 },
               textAlign: "right",
+              mb: 3,
             }}
           >
-            <Box m={3}>
-              <Typography variant="h1" color={"white"} fontFamily={"Avander"}>
+            <Box sx={{ ml: { xs: 3, md: 3 } }}>
+              <Typography variant="h1" color={"white"} fontFamily={"Avander"} sx={{ fontSize: { xs: 30, md: 60 } }}>
                 DECOUVREZ
               </Typography>
-              <Typography variant="h1" color={"white"} fontFamily={"Avander"}>
+              <Typography variant="h1" color={"white"} fontFamily={"Avander"} sx={{ fontSize: { xs: 25, md: 50 } }}>
                 NOS AVENTURES
               </Typography>
             </Box>
 
             <IconButton
               size="large"
-              sx={{ bgcolor: "#C0A179", m: 3, mt: 0, "&:hover": { backgroundColor: "#AE925B" } }}
+              sx={{ bgcolor: "#C0A179", mt: 2, "&:hover": { backgroundColor: "#AE925B" } }}
               onClick={handleScrollToBottom}
             >
               <KeyboardArrowDownIcon color="primary" />
             </IconButton>
           </Box>
         </Box>
+        <Box ref={bottomRef} />
       </section>
 
       <section>
-        <Box sx={{ textAlign: "center", pt: 15, maxWidth: "md", alignItems: "center", px: 10 }} ref={bottomRef}>
-          <Typography color={"white"} variant="h5" fontSize={38} mb={2}>
+        <Box
+          sx={{
+            textAlign: "center",
+            pt: { md: 15, xs: 5 },
+            maxWidth: "md",
+            alignItems: "center",
+            px: { xs: 5, md: 10 },
+          }}
+        >
+          <Typography color={"white"} variant="h5" sx={{ color: "white", fontSize: { xs: 28, md: 38 }, mb: 2 }}>
             EDEN C&apos;EST QUOI ?
           </Typography>
           <Typography color={"white"} fontSize={16}>
@@ -74,9 +95,53 @@ export default function HomePage() {
         </Box>
       </section>
 
-      <section>
-        <Box sx={{ display: "flex", maxWidth: "md", px: 10, mt: 20, alignItems: "center", gap: 10 }}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      {!isMobile && (
+        <section>
+          <Box
+            sx={{
+              display: "flex",
+              maxWidth: "md",
+              px: 10,
+              mt: 20,
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <Typography color={"white"} variant="h5">
+                EDEN NE FAITE PLUS QU&apos;UN AVEC VOTRE MOITIÉ
+              </Typography>
+              <Typography color={"white"} fontSize={16}>
+                Lorem ipsum dolor sit amet consectetur. Nec vestibulum eget quis auctor tortor lectus leo malesuada.
+                Dignissim malesuada hendrerit amet bibendum fusce. Lorem ipsum dolor sit amet consectetur. Nec
+                vestibulum eget quis auctor tortor lectus leo malesuada. Dignissim malesuada hendrerit amet bibendum
+                fusce. Dignissim malesuada hendrerit amet.
+              </Typography>
+
+              <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
+                <StoreButton platform="ios" />
+                <StoreButton platform="android" />
+              </Box>
+            </Box>
+            <Box component={"img"} src="images/iPhonePicture.png" sx={{ height: "60vh" }} />
+          </Box>
+        </section>
+      )}
+
+      {isMobile && (
+        <section>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "xs",
+              px: 5,
+              mt: 20,
+              alignItems: "center",
+              textAlign: "center",
+              gap: 5,
+            }}
+          >
             <Typography color={"white"} variant="h5">
               EDEN NE FAITE PLUS QU&apos;UN AVEC VOTRE MOITIÉ
             </Typography>
@@ -87,18 +152,29 @@ export default function HomePage() {
               malesuada hendrerit amet.
             </Typography>
 
-            <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
+            <Box component={"img"} src="images/iPhonePicture.png" sx={{ height: "60vh" }} />
+
+            <Box sx={{ display: "flex", gap: 3, justifyContent: "center", flexDirection: "column" }}>
               <StoreButton platform="ios" />
               <StoreButton platform="android" />
             </Box>
           </Box>
-          <Box component={"img"} src="images/iPhonePicture.png" sx={{ height: "60vh" }} />
-        </Box>
-      </section>
+        </section>
+      )}
 
       <section>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Box sx={{ display: "flex", maxWidth: "md", mt: 15, alignItems: "center", gap: 10, mb: 3 }}>
+          <Box
+            sx={{
+              display: "flex",
+              maxWidth: "md",
+              mt: 15,
+              alignItems: "center",
+              gap: { xs: 5, md: 10 },
+              mb: 3,
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
             <CustomCard
               imageSrc={"images/Asset1.jpeg"}
               title={"DES AVENTURES PERSONNALISÉES"}
@@ -129,8 +205,8 @@ export default function HomePage() {
       </section>
 
       <section>
-        <Box sx={{ width: "100%", textAlign: "center", mt: 15, maxWidth: "md" }}>
-          <Typography color={"white"} variant="h2" fontSize={40} fontWeight={500}>
+        <Box sx={{ textAlign: "center", mt: 15, maxWidth: { xs: "xs", md: "md" }, mx: { xs: 3 } }}>
+          <Typography color={"white"} variant="h2" fontWeight={500} sx={{ fontSize: { xs: 30, md: 40 }, mb: 3 }}>
             FAQ
           </Typography>
           <FAQ data={data} />
@@ -149,13 +225,13 @@ export default function HomePage() {
             gap: 2,
           }}
         >
-          <Typography variant="h2" fontSize={40} color={"white"}>
+          <Typography variant="h2" sx={{ fontSize: { md: 40, xs: 30 }, color: "white" }}>
             COMMENCER VOS AVENTURES DÈS MAINTENANT !
           </Typography>
           <Typography color={"white"} fontSize={16} mb={3}>
             Télécharger l&apos;application Eden
           </Typography>
-          <Box sx={{ display: "flex", gap: 3, justifyContent: "center" }}>
+          <Box sx={{ display: "flex", gap: 3, justifyContent: "center", flexDirection: { xs: "column", md: "row" } }}>
             <StoreButton platform="ios" />
             <StoreButton platform="android" />
           </Box>
