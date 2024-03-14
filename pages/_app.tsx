@@ -6,6 +6,7 @@ import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/lib/themes/themeMui";
 import { CssBaseline } from "@mui/material";
+import { Analytics } from "@vercel/analytics/react";
 
 const clientSideEmotionCache = createEmotionCache();
 export interface ILocalProps extends AppProps {
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
+        <Analytics />
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />
