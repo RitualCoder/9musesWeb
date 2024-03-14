@@ -1,11 +1,17 @@
-import { Box } from "@mui/material";
+import { Box, Drawer, IconButton, Typography, useMediaQuery } from "@mui/material";
 import EdenIcon from "./icons/edenIcon";
 import React from "react";
 import { ButtonComponent } from "./button";
 import CustomLink from "./link";
+import theme from "@/lib/themes/themeMui";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function NavBar() {
   const [displayBackgroundColor, setDisplayBackgroundColor] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [displayDrawerMobile, setDisplayDrawerMobile] = React.useState(false);
 
   const handleScroll = (e: any) => {
     setDisplayBackgroundColor(window.scrollY > 100);
@@ -18,50 +24,106 @@ export default function NavBar() {
     };
   }, []);
 
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        position: "fixed",
-        width: "100%",
-        justifyContent: "space-between",
-        alignItems: "center",
-        bgcolor: displayBackgroundColor ? "rgba(0, 0, 0, 0.9)" : "transparent",
-        height: "80px",
-        py: 1,
-        px: 8,
-        zIndex: 100,
-        transition: "background-color 0.3s ease",
-      }}
-      onScroll={(e) => handleScroll(e)}
-    >
-      {/* Contenu à gauche */}
+  const renderDesktop = () => {
+    return (
       <Box
         sx={{
           display: "flex",
+          position: "fixed",
+          width: "100%",
+          justifyContent: "space-between",
           alignItems: "center",
-          justifyContent: "center",
-          gap: 3,
+          bgcolor: displayBackgroundColor ? "rgba(0, 0, 0, 0.9)" : "transparent",
+          height: "80px",
+          py: 1,
+          px: 8,
+          zIndex: 100,
+          transition: "background-color 0.3s ease",
         }}
+        onScroll={(e) => handleScroll(e)}
+      >
+        {/* Contenu à gauche */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 3,
+          }}
+        >
+          <CustomLink url="/" icon={<EdenIcon size={55} />} />
+
+          <Box sx={{ ml: 2, display: "flex", gap: 1 }}>
+            <CustomLink url="/contact" text="NOTRE CONCEPT" />
+
+            <CustomLink url="/" text="NOS AVENTURES" />
+          </Box>
+        </Box>
+
+        {/* Contenu à droite */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <ButtonComponent url="/" text="Télécharger l'app" />
+        </Box>
+      </Box>
+    );
+  };
+
+  const renderMobile = () => {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          position: "fixed",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "space-between",
+          bgcolor: "rgba(0, 0, 0, 0.9)",
+          height: "80px",
+          py: 1,
+          px: 4,
+          zIndex: 100,
+          transition: "background-color 0.3s ease",
+        }}
+        onScroll={(e) => handleScroll(e)}
       >
         <CustomLink url="/" icon={<EdenIcon size={55} />} />
 
-        <Box sx={{ ml: 2, display: "flex", gap: 1 }}>
-          <CustomLink url="/contact" text="NOTRE CONCEPT" />
+        {/* Contenu à gauche */}
+        <IconButton>
+          <MenuIcon fontSize="large" sx={{ color: "white" }} onClick={() => setDisplayDrawerMobile(true)} />
+        </IconButton>
 
-          <CustomLink url="/" text="NOS AVENTURES" />
-        </Box>
-      </Box>
+        <Drawer
+          PaperProps={{
+            sx: { width: "100%", bgcolor: "black" },
+          }}
+          open={displayDrawerMobile}
+          onClose={() => setDisplayDrawerMobile(false)}
+          anchor="top"
+        >
+          <IconButton sx={{ position: "absolute", right: 10, top: 10 }}>
+            <CloseIcon fontSize="medium" sx={{ color: "white" }} onClick={() => setDisplayDrawerMobile(false)} />
+          </IconButton>
+          <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", p: 5, gap: 3 }}>
+            <Box mb={3}>
+              <CustomLink url="/" icon={<EdenIcon size={55} />} />
+            </Box>
 
-      {/* Contenu à droite */}
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <ButtonComponent url="/" text="Télécharger l'app" />
+            <CustomLink url="/contact" text="NOTRE CONCEPT" />
+
+            <CustomLink url="/" text="NOS AVENTURES" />
+
+            <CustomLink url="/" text="Télécharger l'application" />
+          </Box>
+        </Drawer>
       </Box>
-    </Box>
-  );
+    );
+  };
+
+  return isMobile ? renderMobile() : renderDesktop();
 }

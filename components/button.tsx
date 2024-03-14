@@ -16,7 +16,6 @@ export const ButtonComponent = ({ url, text, sx, ...buttonProps }: ButtonCompone
         sx={{
           borderRadius: "0px",
           bgcolor: "#C0A179",
-          height: "40px",
           "&:hover": {
             backgroundColor: "white",
             transform: "scale(1.02)",

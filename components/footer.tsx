@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
+import { Box, Button, IconButton, TextField, Typography, useMediaQuery } from "@mui/material";
 import EdenIcon from "./icons/edenIcon";
 import Link from "next/link";
 import React from "react";
@@ -7,11 +7,14 @@ import { Grid } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import theme from "@/lib/themes/themeMui";
 
 export default function Footer() {
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box>
-      <Grid container spacing={2} sx={{ px: 10, py: 5, overflowX: "hidden", mt: 5 }}>
+      <Grid container spacing={2} sx={{ px: {xs: 3, md: 10}, py: 5, overflowX: "hidden", mt: 5 }}>
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2, px: 3, py: 2 }}>
             <Typography variant="h2" fontSize={20} fontWeight={900} color={"white"} mb={3}>
@@ -95,7 +98,7 @@ export default function Footer() {
           display: "flex",
           justifyContent: "space-between", // Aligne les éléments tout à gauche et tout à droite
           borderTop: "1px solid #A9A6AA",
-          px: 12,
+          px: {xs: 3, md: 10},
           py: 2,
           alignItems: "center",
         }}

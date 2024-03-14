@@ -1,11 +1,13 @@
 import React from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Typography, Box } from "@mui/material";
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Box, useMediaQuery } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import theme from "@/lib/themes/themeMui";
 
 const FAQ = ({ data }) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom sx={{ fontSize: { md: 40, xs: 20 } }}>
         {data.title}
       </Typography>
       {data.rows.map((row, index) => (
@@ -17,9 +19,10 @@ const FAQ = ({ data }) => {
             sx={{
               backgroundColor: "black",
               color: "white",
+              textAlign: "left",
             }}
           >
-            <Typography variant="h5" fontSize={20}>
+            <Typography variant="h5" sx={{ fontSize: { md: 20, xs: 18 } }}>
               {row.title}
             </Typography>
           </AccordionSummary>
