@@ -94,8 +94,7 @@ export default function Footer() {
         sx={{
           display: "flex",
           justifyContent: "space-between", // Aligne les éléments tout à gauche et tout à droite
-          border: "1px solid",
-          borderTopColor: "#A9A6AA",
+          borderTop: "1px solid #A9A6AA",
           px: 12,
           py: 2,
           alignItems: "center",

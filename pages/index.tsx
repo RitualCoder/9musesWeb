@@ -1,4 +1,4 @@
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRef } from "react";
 import React from "react";
@@ -6,6 +6,7 @@ import { ButtonComponent } from "@/components/button";
 import StoreButton from "@/components/storeButton";
 import { data } from "lib/dataFAQ";
 import FAQ from "@/components/faq";
+import CustomCard from "@/components/customCard";
 
 export default function HomePage() {
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -97,50 +98,31 @@ export default function HomePage() {
 
       <section>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Box sx={{ display: "flex", maxWidth: "md", mt: 15, alignItems: "center", gap: 20, mb: 3 }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                width: "215px",
-              }}
-            >
-              <Box
-                component={"img"}
-                src="images/Asset1.jpeg"
-                sx={{ height: "100%", width: "100px", objectFit: "cover" }}
-              />
-              <Typography>DES AVENTURES PERSONNALISÉES</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                width: "215px",
-              }}
-            >
-              <Box component={"img"} src="images/Asset2.png" sx={{ height: "100px" }} />
-              <Typography>FAIRE QUELQUE CHOSE POUR L&apos;AUTRE</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                width: "215px",
-              }}
-            >
-              <Box component={"img"} src="images/Asset3.png" sx={{ height: "100px" }} />
-              <Typography>RAVIVER OU ATTISER LE DÉSIR</Typography>
-            </Box>
+          <Box sx={{ display: "flex", maxWidth: "md", mt: 15, alignItems: "center", gap: 10, mb: 3 }}>
+            <CustomCard
+              imageSrc={"images/Asset1.jpeg"}
+              title={"DES AVENTURES PERSONNALISÉES"}
+              text={
+                "Lorem ipsum dolor sit amet consectetur. Nec vestibulum eget quis auctor tortor lectus leo malesuada. Dignissim malesuada hendrerit amet bibendum fusce. Lorem ipsum dolor sit amet consectetur."
+              }
+              buttonText={"+"}
+            />
+            <CustomCard
+              imageSrc={"images/Asset2.png"}
+              title={"FAIRE QUELQUE CHOSE POUR L'AUTRE"}
+              text={
+                "Lorem ipsum dolor sit amet consectetur. Nec vestibulum eget quis auctor tortor lectus leo malesuada. Dignissim malesuada hendrerit amet bibendum fusce. Lorem ipsum dolor sit amet consectetur."
+              }
+              buttonText={"+"}
+            />
+            <CustomCard
+              imageSrc={"images/Asset3.png"}
+              title={"RAVIVER OU ATTISER LE DÉSIR"}
+              text={
+                "Lorem ipsum dolor sit amet consectetur. Nec vestibulum eget quis auctor tortor lectus leo malesuada. Dignissim malesuada hendrerit amet bibendum fusce. Lorem ipsum dolor sit amet consectetur."
+              }
+              buttonText={"+"}
+            />
           </Box>
           <ButtonComponent url={"/"} text={"DÉCOUVREZ NOS OFFRES"} sx={{ mt: 5 }} />
         </Box>

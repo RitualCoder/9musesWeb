@@ -1,8 +1,8 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import EdenIcon from "./icons/edenIcon";
-import Link from "next/link";
 import React from "react";
 import { ButtonComponent } from "./button";
+import CustomLink from "./link";
 
 export default function NavBar() {
   const [displayBackgroundColor, setDisplayBackgroundColor] = React.useState(false);
@@ -29,6 +29,7 @@ export default function NavBar() {
         bgcolor: displayBackgroundColor ? "rgba(0, 0, 0, 0.9)" : "transparent",
         height: "80px",
         py: 1,
+        px: 8,
         zIndex: 100,
         transition: "background-color 0.3s ease",
       }}
@@ -38,40 +39,24 @@ export default function NavBar() {
       <Box
         sx={{
           display: "flex",
-          position: "absolute",
-          left: 25,
           alignItems: "center",
-          gap: 1,
+          justifyContent: "center",
+          gap: 3,
         }}
       >
-        <Link href="/contact">
-          <Button sx={{ fontSize: 16 }}>NOTRE CONCEPT</Button>
-        </Link>
-        <Link href="/">
-          <Button sx={{ fontSize: 16 }}>NOS AVENTURES</Button>
-        </Link>
-      </Box>
+        <CustomLink url="/" icon={<EdenIcon size={55} />} />
 
-      {/* Contenu au milieu */}
-      <Box
-        sx={{
-          display: "flex",
-          position: "absolute",
-          left: "calc(50% - 32px)",
-          alignItems: "center",
-        }}
-      >
-        <Link href={"/"}>
-          <EdenIcon size={64} />
-        </Link>
+        <Box sx={{ ml: 2, display: "flex", gap: 1 }}>
+          <CustomLink url="/contact" text="NOTRE CONCEPT" />
+
+          <CustomLink url="/" text="NOS AVENTURES" />
+        </Box>
       </Box>
 
       {/* Contenu à droite */}
       <Box
         sx={{
           display: "flex",
-          position: "absolute",
-          right: 25,
           alignItems: "center",
         }}
       >

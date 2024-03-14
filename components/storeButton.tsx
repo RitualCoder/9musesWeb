@@ -58,16 +58,16 @@ const StoreButton = ({ platform }: StoreButtonProps) => {
           "&:hover": {
             backgroundColor: "rgba(255, 255, 255, 0.1)",
           },
-          minWidth: "210px",
+          minWidth: "180px",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
           <Box sx={{ transform: "translateY(6%)" }}>{getStoreIcon()}</Box>
           <Box sx={{ display: "flex", flexDirection: "column", textAlign: "left" }}>
-            <Typography fontSize={14} sx={{ transform: "translateY(20%)" }}>
+            <Typography fontSize={10} sx={{ transform: "translateY(20%)" }}>
               {getSentence()}
             </Typography>
-            <Typography fontSize={24} sx={{ transform: "translateY(-7%)" }}>
+            <Typography fontSize={20} sx={{ transform: "translateY(-7%)" }}>
               {getStoreName()}
             </Typography>
           </Box>

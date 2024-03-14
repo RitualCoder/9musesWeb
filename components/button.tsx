@@ -18,8 +18,9 @@ export const ButtonComponent = ({ url, text, sx, ...buttonProps }: ButtonCompone
           bgcolor: "#C0A179",
           height: "40px",
           "&:hover": {
-            backgroundColor: "#AE925B",
+            backgroundColor: "white",
             transform: "scale(1.02)",
+            color: "#C0A179",
           },
           color: "white",
           transition: "0.2s",
