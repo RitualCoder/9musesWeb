@@ -5,7 +5,12 @@ export default function Home() {
   return (
     <Container>
       <Typography variant="h1">Home</Typography>
-      <BoxAdventure />
+      <BoxAdventure
+        title={"BOX AVENTURE"}
+        subtitle={"une aventure en duo"}
+        imageSrc={"/public/photo1.jpeg"}
+        imageAlt={"couple"}
+      />
     </Container>
   );
 }
