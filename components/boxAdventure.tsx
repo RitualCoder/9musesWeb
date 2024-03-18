@@ -2,6 +2,33 @@ import React from "react";
 import { Typography, Button, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+interface ImageProps {
+  src: string;
+  alt: string;
+}
+
+const Image = styled("img")<ImageProps>(({ src, alt }) => ({
+  width: 368,
+  height: 263,
+  zIndex: 0,
+  position: "relative",
+  src,
+  alt,
+}));
+
+interface TitleProps {
+  variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  children: React.ReactNode;
+}
+
+const Title = styled(Typography)<TitleProps>(({ variant, theme }) => ({
+  textAlign: "center",
+  marginBottom: "10px",
+  marginTop: "80%",
+  color: "white",
+  ...theme.typography[variant],
+}));
+
 const Container = styled(Box)({
   backgroundColor: "black",
   width: 368,
@@ -37,22 +64,6 @@ const Container3 = styled(Box)({
   alignItems: "center",
 });
 
-const Image = styled("img")({
-  width: 368,
-  height: 263,
-  zIndex: 0, // Modifier le z-index ici
-  position: "relative",
-});
-
-const Title = styled(Typography)({
-  fontSize: "24px",
-  textAlign: "center",
-  marginBottom: "10px",
-  marginTop: "80%",
-
-  color: "white",
-});
-
 const Subtitle = styled(Typography)({
   fontSize: "14px",
   textAlign: "center",
@@ -75,14 +86,26 @@ const StyledButton = styled(Button)({
   },
 });
 
-function BoxAdventure() {
+interface BoxAdventureProps {
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+function BoxAdventure({
+  title,
+  subtitle,
+  imageSrc,
+  imageAlt,
+}: BoxAdventureProps) {
   return (
     <Container>
-      <Image src="photo1.jpeg" alt="" />
+      <Image src={"/photo1.jpeg"} alt={"couple"} />
       <Container2>
         <Container3></Container3>
-        <Title variant="h1">BOX DÉCOUVERTE</Title>
-        <Subtitle variant="h3">une aventure en duo</Subtitle>
+        <Title variant="h5">{"BOX DÉCOUVERTE"}</Title>
+        <Subtitle variant="h3">{"une aventure en duo"}</Subtitle>
       </Container2>
       <StyledButton variant="contained">DÉCOUVRIR LA BOX</StyledButton>
     </Container>
