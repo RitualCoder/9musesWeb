@@ -122,18 +122,21 @@ export default function NosAventures() {
             subtitle={"une aventure en duo"}
             imageSrc={"/images/asset4.jpeg"}
             imageAlt={"couple"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"BOX SENSUEL"}
             subtitle={"une aventure sensuelle en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bisou dans le cou"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"ALL INCLUSIVE"}
             subtitle={"une aventure personalisée en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bouton de manche"}
+            link={"/lien-vers-la-box"}
           />
         </Box>
 
@@ -144,7 +147,8 @@ export default function NosAventures() {
             justifyContent: "space-between",
             "& > *:not(:last-child)": {
               marginRight: 0,
-              marginBottom: 15, // Ajoute une marge de 10px à droite de chaque composant sauf le dernier
+              marginBottom: 15,
+              pointerEvents: "auto", // Ajoute une marge de 10px à droite de chaque composant sauf le dernier
             },
           }}
         >
@@ -153,18 +157,21 @@ export default function NosAventures() {
             subtitle={"une aventure en duo"}
             imageSrc={"/images/asset4.jpeg"}
             imageAlt={"couple"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"BOX SENSUEL"}
             subtitle={"une aventure sensuelle en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bisou dans le cou"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"ALL INCLUSIVE"}
             subtitle={"une aventure personalisée en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bouton de manche"}
+            link={"/lien-vers-la-box"}
           />
         </Box>
 
@@ -184,18 +191,21 @@ export default function NosAventures() {
             subtitle={"une aventure en duo"}
             imageSrc={"/images/asset4.jpeg"}
             imageAlt={"couple"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"BOX SENSUEL"}
             subtitle={"une aventure sensuelle en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bisou dans le cou"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"ALL INCLUSIVE"}
             subtitle={"une aventure personalisée en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bouton de manche"}
+            link={"/lien-vers-la-box"}
           />
         </Box>
 
@@ -215,18 +225,21 @@ export default function NosAventures() {
             subtitle={"une aventure en duo"}
             imageSrc={"/images/asset4.jpeg"}
             imageAlt={"couple"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"BOX SENSUEL"}
             subtitle={"une aventure sensuelle en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bisou dans le cou"}
+            link={"/lien-vers-la-box"}
           />
           <BoxAventure
             title={"ALL INCLUSIVE"}
             subtitle={"une aventure personalisée en duo"}
             imageSrc={"/images/asset6.jpeg"}
             imageAlt={"bouton de manchette"}
+            link={"/lien-vers-la-box"}
           />
         </Box>
       </section>

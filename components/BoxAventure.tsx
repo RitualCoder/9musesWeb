@@ -44,7 +44,7 @@ const Container2 = styled(Box)({
   border: "2px solid #C0A179",
   width: 338,
   height: 382,
-  zIndex: 80,
+  zIndex: 0,
   position: "absolute",
   display: "flex",
   flexDirection: "column",
@@ -75,9 +75,10 @@ const StyledButton = styled(Button)({
   height: "46px",
   textAlign: "center",
   position: "relative",
+  pointerEvents: "auto",
   color: "#FFF",
-  zIndex: 99,
-  marginTop: "35%",
+  zIndex: 90,
+  marginTop: "60%",
   backgroundColor: "#C0A179",
   borderRadius: "0px",
   "&:hover": {
@@ -91,9 +92,10 @@ interface BoxAdventureProps {
   subtitle: string;
   imageSrc: string;
   imageAlt: string;
+  link: string; // Ajoutez une propriété pour le lien
 }
 
-function BoxAdventure({ title, subtitle, imageSrc, imageAlt }: BoxAdventureProps) {
+function BoxAdventure({ title, subtitle, imageSrc, imageAlt, link }: BoxAdventureProps) {
   return (
     <Container>
       <Image src={imageSrc} alt={imageAlt} />
@@ -102,7 +104,11 @@ function BoxAdventure({ title, subtitle, imageSrc, imageAlt }: BoxAdventureProps
         <Title variant="h5">{title}</Title>
         <Subtitle variant="h3">{subtitle}</Subtitle>
       </Container2>
-      <StyledButton variant="contained">DÉCOUVRIR LA BOX</StyledButton>
+      <a href={link}>
+        {" "}
+        {/* Ajoutez un lien autour du bouton */}
+        <StyledButton variant="contained">DÉCOUVRIR LA BOX</StyledButton>
+      </a>
     </Container>
   );
 }
