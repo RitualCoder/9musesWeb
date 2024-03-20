@@ -56,7 +56,7 @@ export default function NavBar() {
           <Box sx={{ ml: 2, display: "flex", gap: 1 }}>
             <CustomLink url="/contact" text="NOTRE CONCEPT" />
 
-            <CustomLink url="/" text="NOS AVENTURES" />
+            <CustomLink url="/nos-aventures" text="NOS AVENTURES" />
           </Box>
         </Box>
 
@@ -116,7 +116,7 @@ export default function NavBar() {
 
             <CustomLink url="/contact" text="NOTRE CONCEPT" />
 
-            <CustomLink url="/" text="NOS AVENTURES" />
+            <CustomLink url="/nos-aventures" text="NOS AVENTURES" />
 
             <CustomLink url="/" text="Télécharger l'application" />
           </Box>
